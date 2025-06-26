@@ -14,6 +14,8 @@ import PrivateRoute from "../components/Firebase/AuthProvider/PrivateRoutes/Priv
 import DashboardHome from "../components/pages/Dashboard/DashboardHome";
 import AllRecipesTable from "../components/pages/Dashboard/AllRecipesTable";
 import MyRecipesTable from "../components/pages/Dashboard/MyRecipesTable";
+import AboutUs from "../components/pages/AboutUs";
+import ContactUs from "../components/pages/ContactUs";
 
 export const router = createBrowserRouter([
   {
@@ -44,6 +46,14 @@ export const router = createBrowserRouter([
       {
         path: "my-recipes",
         element: <PrivateRoute><MyRecipes /></PrivateRoute> ,
+      },
+      {
+        path: "about-us",
+        Component: AboutUs
+      },
+      {
+        path: "contact-us",
+        Component: ContactUs
       },
       {
         path: "auth",

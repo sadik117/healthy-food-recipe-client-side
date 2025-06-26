@@ -4,6 +4,7 @@ import TopRecipes from './layouts/TopRecipes';
 import StatsSection from './utilities/StatsSection';
 import Blog from './layouts/Blog';
 import { Helmet } from 'react-helmet-async';
+import RecipeContestBanner from './layouts/RecipeContestBanner';
 
 const Home = () => {
     
@@ -15,6 +16,7 @@ const Home = () => {
 
             <Slider></Slider>
             <TopRecipes></TopRecipes>
+            <RecipeContestBanner></RecipeContestBanner>
             <Blog></Blog>
             <StatsSection></StatsSection>
         </div>

@@ -1,7 +1,16 @@
-import { FaFacebookF, FaTwitter, FaInstagram, FaEnvelope, FaLinkedin, FaDev, FaDeviantart } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaEnvelope,
+  FaLinkedin,
+  FaDev,
+  FaDeviantart,
+} from "react-icons/fa";
 import Lottie from "lottie-react";
 import cookingAnimation from "../Animations/cooking2.json"; // Make sure this file exists
 import { Fade } from "react-awesome-reveal";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -17,18 +26,48 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="text-center">
-            <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
-            <p>Email: support@recipebook.com</p>
-            <p>Phone: +1 (123) 456-7890</p>
+          <div className="flex flex-col items-center mt-4 space-y-2 text-shadow-zinc-700">
+            <h6 className="footer-title">Company</h6>
+            <Link to="/about-us" className="hover:underline text-sm">
+              About Us
+            </Link>
+            <Link to="/contact-us" className="hover:underline text-sm">
+              Contact Us
+            </Link>
           </div>
 
           {/* Social Icons */}
-          <div className="flex justify-center md:justify-end gap-4">
-            <a href="https://www.facebook.com/sadiksourov11/" target="_blank" className="hover:text-yellow-400 text-2xl"><FaFacebookF /></a>
-            <a href="https://x.com/sadiksourov117" target="_blank" className="hover:text-yellow-400 text-2xl"><FaTwitter /></a>
-            <a href="https://linkedin.com/in/sadiksourov11" target="_blank" className="hover:text-yellow-400 text-2xl"><FaLinkedin></FaLinkedin></a>
-            <a href="mailto:sadiksourov11@gmail.com" className="hover:text-yellow-400 text-2xl"><FaEnvelope /></a>
+          <div className="flex flex-col items-center md:items-end gap-2">
+            <h6 className="footer-title mr-0 md:mr-10">Social</h6>
+            <div className="flex gap-4">
+              <a
+                href="https://www.facebook.com/sadiksourov11/"
+                target="_blank"
+                className="hover:text-yellow-400 text-2xl"
+              >
+                <FaFacebookF />
+              </a>
+              <a
+                href="https://x.com/sadiksourov117"
+                target="_blank"
+                className="hover:text-yellow-400 text-2xl"
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="https://linkedin.com/in/sadiksourov11"
+                target="_blank"
+                className="hover:text-yellow-400 text-2xl"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="mailto:sadiksourov11@gmail.com"
+                className="hover:text-yellow-400 text-2xl"
+              >
+                <FaEnvelope />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -36,9 +75,11 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="text-center text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} Recipe Book. All rights reserved. 
+          &copy; {new Date().getFullYear()} Recipe Book. All rights reserved.
           <br />
-        <span><FaDev className="inline-block"></FaDev> Developed by Sadik Sourov. </span> 
+          <span>
+            <FaDev className="inline-block"></FaDev> Developed by Sadik Sourov.{" "}
+          </span>
         </div>
       </Fade>
     </footer>

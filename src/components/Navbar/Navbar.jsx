@@ -34,7 +34,7 @@ const Navbar = () => {
     }`;
 
   return (
-    <nav className="bg-sky-200 dark:bg-gray-900 shadow-md transition-colors duration-300">
+    <nav className="sticky top-0 z-50 bg-sky-200 dark:bg-gray-900 shadow-md transition-colors duration-300">
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <Link

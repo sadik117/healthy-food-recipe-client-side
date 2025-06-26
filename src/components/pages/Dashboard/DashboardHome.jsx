@@ -10,16 +10,16 @@ const DashboardHome = () => {
   const [myRecipes, setMyRecipes] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:3000/dashboard/recipes/count")
+    fetch("https://recipe-book-server-side.vercel.app/dashboard/recipes/count")
       .then((res) => res.json())
       .then((data) => setTotalRecipes(data.count));
 
-    fetch("http://localhost:3000/dashboard/recipes/total-cuisines")
+    fetch("https://recipe-book-server-side.vercel.app/dashboard/recipes/total-cuisines")
       .then((res) => res.json())
       .then((data) => setTotalCuisines(data.totalCuisines));
 
     if (user?.email) {
-      fetch(`http://localhost:3000/dashboard/recipes/user?email=${user.email}`)
+      fetch(`https://recipe-book-server-side.vercel.app/dashboard/recipes/user?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => setMyRecipes(data.length));
     }
