@@ -35,13 +35,15 @@ export const router = createBrowserRouter([
         path: "viewDetails/:id",
         element: (
           <PrivateRoute>
-            <RecipeDetails />
+            <RecipeDetails></RecipeDetails>
           </PrivateRoute>
         ),
       },
       {
         path: "add-recipes",
-        element: <PrivateRoute><AddRecipes></AddRecipes></PrivateRoute>
+        element: <PrivateRoute>
+          <AddRecipes></AddRecipes>
+          </PrivateRoute>
       },
       {
         path: "my-recipes",
