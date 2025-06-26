@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { BookOpen, LayoutGrid, UserCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { AuthContext } from "../../Firebase/AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const DashboardHome = () => {
   const { user } = useContext(AuthContext);
@@ -59,7 +60,7 @@ const DashboardHome = () => {
         className="mb-8 p-6 rounded-xl bg-gradient-to-r from-amber-200 via-yellow-100 to-orange-200 dark:from-gray-700 dark:via-gray-800 dark:to-gray-700 shadow-md text-center"
       >
         <h1 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white">
-          Welcome to Our Dashboard
+          Welcome to Dashboard
           {user?.displayName ? `, ${user.displayName}` : ""}!
         </h1>
         <p className="mt-2 text-gray-700 dark:text-gray-300 text-sm md:text-base">

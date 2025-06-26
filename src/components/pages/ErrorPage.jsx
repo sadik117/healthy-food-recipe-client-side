@@ -1,28 +1,39 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import { motion } from "framer-motion";
+import animationData from "../../../public/error-animation.json";
 import { Helmet } from "react-helmet-async";
-import { Link, useRouteError } from "react-router";
 
 const ErrorPage = () => {
-  const error = useRouteError();
   return (
-    <>
-      <div className="py-24 text-center">
+    <motion.div
+      className="min-h-screen flex flex-col items-center justify-center bg-gray-50 text-center p-4"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <div className="max-w-md w-full">
+        
         <Helmet>
-          <title>Error</title>
+          <title>Error || Food Recipe Book</title>
         </Helmet>
-        <h1 className="mb-7 text-8xl font-thin text-gray-900">
-          {error?.status || 404}
+
+        <Lottie animationData={animationData} loop={true} />
+        <h1 className="text-3xl font-bold text-gray-800 mt-2">
+          Page Not Found
         </h1>
-        <p className="mb-5 text-xl font-bold text-red-500 md:text-2xl">
-          {error?.error?.message || "Something Went Wrong!"}
+        <p className="text-gray-500 mt-2 mb-4">
+          The page you’re looking for doesn’t exist or has been moved.
         </p>
-        <Link to="/">
-          <button className="btn bg-teal-600 text-white px-5 py-2 font-semibold rounded-md shadow">
-            Go Back Home
-          </button>
+        <Link
+          to="/"
+          className="inline-block px-5 py-2 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition duration-300"
+        >
+          Back to Home
         </Link>
       </div>
-    </>
+    </motion.div>
   );
 };
 

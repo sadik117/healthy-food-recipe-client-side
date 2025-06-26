@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../Firebase/AuthProvider/AuthProvider";
+import Loading from "../Loading";
 
 const MySwal = withReactContent(Swal);
 
@@ -144,7 +145,7 @@ const MyRecipesTable = () => {
             {myRecipes.length === 0 && (
               <tr>
                 <td colSpan="6" className="text-center py-6 text-gray-500 dark:text-gray-400">
-                  No recipes found.
+                  <Loading></Loading>
                 </td>
               </tr>
             )}

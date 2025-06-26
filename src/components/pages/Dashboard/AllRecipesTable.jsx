@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import Loading from "../Loading";
 
 const AllRecipesTable = () => {
   const [recipes, setRecipes] = useState([]);
@@ -58,7 +59,7 @@ const AllRecipesTable = () => {
             {recipes.length === 0 && (
               <tr>
                 <td colSpan="6" className="text-center py-6 text-gray-500 dark:text-gray-400">
-                  No recipes found.
+                  <Loading></Loading>
                 </td>
               </tr>
             )}
