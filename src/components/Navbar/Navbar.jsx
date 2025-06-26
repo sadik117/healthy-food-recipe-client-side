@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
 import Lottie from "lottie-react";
-import cookingAnimation from "../../components/Animations/cooking.json"; 
+import cookingAnimation from "../../components/Animations/cooking.json";
 import { AuthContext } from "../Firebase/AuthProvider/AuthProvider";
 
 const Navbar = () => {
@@ -33,30 +33,28 @@ const Navbar = () => {
     <>
       <NavLink to="/" className="hover:text-blue-500 dark:hover:text-blue-300">Home</NavLink>
       <NavLink to="/all-recipes" className="hover:text-blue-500 dark:hover:text-blue-300">All Recipes</NavLink>
-      <NavLink to="/add-recipe" className="hover:text-blue-500 dark:hover:text-blue-300">Add Recipe</NavLink>
       {user && (
-        <>     
-          <NavLink to="/my-recipes" className="hover:text-blue-500 dark:hover:text-blue-300">My Recipes</NavLink>
-        </>
+        <NavLink to="/dashboard" className="hover:text-blue-500 dark:hover:text-blue-300">Dashboard</NavLink>
       )}
     </>
   );
 
   return (
-    <nav className="bg-slate-200 dark:bg-gray-900 shadow-md transition-colors duration-300">
+    <nav className="bg-sky-200 dark:bg-gray-900 shadow-md transition-colors duration-300">
       <div className="max-w-screen mx-2 md:mx-4 px-4 py-3 flex justify-between items-center">
+        {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <div className="w-13 h-10">
-            <Lottie animationData={cookingAnimation} loop={true} className="mt-1.5"/>
+            <Lottie animationData={cookingAnimation} loop={true} className="mt-1.5" />
           </div>
           <span className="text-xl font-bold text-amber-600 dark:text-amber-400">Recipe Book</span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-4 text-gray-700 dark:text-gray-300 font-medium text-small">
-
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-4 text-gray-700 dark:text-gray-300 font-medium text-sm">
           {navLinks}
 
-          {/* Dark mode toggle button */}
+          {/* Dark Mode Toggle */}
           <button
             onClick={toggleDarkMode}
             aria-label="Toggle Dark Mode"
@@ -94,8 +92,8 @@ const Navbar = () => {
           )}
         </div>
 
+        {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center gap-4">
-          {/* Dark mode toggle on mobile */}
           <button
             onClick={toggleDarkMode}
             aria-label="Toggle Dark Mode"
@@ -114,6 +112,7 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Dropdown Menu */}
       {isOpen && (
         <div className="md:hidden px-4 pb-4 flex flex-col gap-4 text-gray-700 dark:text-gray-300 font-medium transition-colors duration-300">
           {navLinks}

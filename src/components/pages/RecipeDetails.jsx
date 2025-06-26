@@ -45,7 +45,7 @@ const RecipeDetails = () => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto p-6 my-6 bg-amber-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg shadow-md">
+    <div className="max-w-3xl mx-auto p-6 my-6 bg-sky-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg shadow-md">
       
      <Helmet>
       <title>Recipe Details</title>
@@ -91,7 +91,7 @@ const RecipeDetails = () => {
 
       <button
         onClick={handleLike}
-        className="mt-4 btn btn-primary"
+        className="mt-4 btn bg-sky-600 text-emerald-100"
       >
         Like ❤️
       </button>

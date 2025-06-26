@@ -1,77 +1,78 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../components/layouts/MainLayout";
+import DashboardLayout from "../components/layouts/DashboardLayout";
 import ErrorPage from "../components/pages/ErrorPage";
 import Home from "../components/Home";
 import Login from "../components/pages/Login";
 import Register from "../components/pages/Register";
+import ForgotPass from "../components/pages/ForgotPass";
 import AllRecipes from "../components/AllRecipes";
 import AddRecipes from "../components/Firebase/AuthProvider/PrivateRoutes/AddRecipes";
 import MyRecipes from "../components/Firebase/AuthProvider/PrivateRoutes/MyRecipes";
-import PrivateRoute from "../components/Firebase/AuthProvider/PrivateRoutes/PrivateRoute";
 import RecipeDetails from "../components/pages/RecipeDetails";
-import ForgotPass from "../components/pages/ForgotPass";
+import PrivateRoute from "../components/Firebase/AuthProvider/PrivateRoutes/PrivateRoute";
+// import DashboardHome from "../components/layouts/DashboardHome";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: MainLayout,
-    errorElement: <ErrorPage></ErrorPage>,
+    element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
-        Component: Home,
-        hydrateFallbackElement: (
-          <p className="justify-center items-center mx-120 my-50">
-            <span className="loading loading-infinity loading-xs"></span>
-            <span className="loading loading-infinity loading-sm"></span>
-            <span className="loading loading-infinity loading-md"></span>
-            <span className="loading loading-infinity loading-lg"></span>
-            <span className="loading loading-infinity loading-xl"></span>
-          </p>
+        element: (
+          <Home />
         ),
       },
       {
-        path: "/all-recipes",
-        Component: AllRecipes,
+        path: "all-recipes",
+        element: <AllRecipes />,
       },
       {
-        path: "/add-recipe",
+        path: "viewDetails/:id",
         element: (
           <PrivateRoute>
-            <AddRecipes></AddRecipes>
+            <RecipeDetails />
           </PrivateRoute>
         ),
       },
       {
-        path: "/viewDetails/:id",
-        element: (
-          <PrivateRoute>
-            <RecipeDetails></RecipeDetails>
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/my-recipes",
-        element: (
-          <PrivateRoute>
-            <MyRecipes></MyRecipes>
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/auth",
+        path: "auth",
         children: [
           {
-            path: "/auth/login",
-            Component: Login,
+            path: "login",
+            element: <Login />,
           },
           {
-            path: "/auth/register",
-            Component: Register,
+            path: "register",
+            element: <Register />,
           },
           {
-            path: "/auth/forgetpassword",
-            Component: ForgotPass 
+            path: "forgetpassword",
+            element: <ForgotPass />,
+          },
+        ],
+      },
+      {
+        path: "dashboard",
+        element: (
+          <PrivateRoute>
+            <DashboardLayout />
+          </PrivateRoute>
+        ),
+        children: [
+          // {
+          //   index: true,
+          //   Component: DashboardHome
+          // },
+          {
+            path: "add-recipe",
+            element: <AddRecipes />,
+          },
+          {
+            path: "my-recipes",
+            element: <MyRecipes />,
           },
         ],
       },

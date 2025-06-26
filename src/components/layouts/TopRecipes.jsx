@@ -25,7 +25,7 @@ const TopRecipes = () => {
               <h3 className="text-xl font-bold mb-2 dark:text-white">{recipe.title}</h3>
               <p className="text-gray-600 dark:text-gray-300">Cuisine: {recipe.cuisine}</p>
               <p className="text-gray-600 dark:text-gray-300">Likes: ❤️ {recipe.likeCount}</p>
-              <Link to={`/viewDetails/${recipe._id}`} className="btn btn-primary mt-4 w-full">
+              <Link to={`/viewDetails/${recipe._id}`} className="btn bg-sky-600 text-emerald-100 mt-4 w-full">
                 View Details
               </Link>
             </div>

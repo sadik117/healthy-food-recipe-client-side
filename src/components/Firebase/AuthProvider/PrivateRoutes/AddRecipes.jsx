@@ -51,7 +51,7 @@ const AddRecipe = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-amber-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-lg rounded-xl mt-10">
+    <div className="max-w-4xl mx-auto ml-0 md:ml-44 p-6 bg-amber-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-lg rounded-xl mt-4">
       
       <Helmet>
         <title>Add Recipe</title>
