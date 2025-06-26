@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../components/layouts/MainLayout";
-import DashboardLayout from "../components/layouts/DashboardLayout";
+import DashboardLayout from "../components/pages/Dashboard/DashboardLayout";
 import ErrorPage from "../components/pages/ErrorPage";
 import Home from "../components/Home";
 import Login from "../components/pages/Login";
@@ -11,7 +11,9 @@ import AddRecipes from "../components/Firebase/AuthProvider/PrivateRoutes/AddRec
 import MyRecipes from "../components/Firebase/AuthProvider/PrivateRoutes/MyRecipes";
 import RecipeDetails from "../components/pages/RecipeDetails";
 import PrivateRoute from "../components/Firebase/AuthProvider/PrivateRoutes/PrivateRoute";
-// import DashboardHome from "../components/layouts/DashboardHome";
+import DashboardHome from "../components/pages/Dashboard/DashboardHome";
+import AllRecipesTable from "../components/pages/Dashboard/AllRecipesTable";
+import MyRecipesTable from "../components/pages/Dashboard/MyRecipesTable";
 
 export const router = createBrowserRouter([
   {
@@ -21,9 +23,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: (
-          <Home />
-        ),
+        element: <Home />,
       },
       {
         path: "all-recipes",
@@ -36,6 +36,14 @@ export const router = createBrowserRouter([
             <RecipeDetails />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "add-recipes",
+        element: <PrivateRoute><AddRecipes></AddRecipes></PrivateRoute>
+      },
+      {
+        path: "my-recipes",
+        element: <PrivateRoute><MyRecipes /></PrivateRoute> ,
       },
       {
         path: "auth",
@@ -62,17 +70,17 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         children: [
-          // {
-          //   index: true,
-          //   Component: DashboardHome
-          // },
           {
-            path: "add-recipe",
-            element: <AddRecipes />,
+            index: true,
+            Component: DashboardHome,
           },
           {
-            path: "my-recipes",
-            element: <MyRecipes />,
+            path: "all-recipes-table",
+            Component: AllRecipesTable
+          },
+          {
+            path: "my-recipes-table",
+            Component: MyRecipesTable
           },
         ],
       },

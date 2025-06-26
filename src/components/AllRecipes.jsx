@@ -62,7 +62,7 @@ const AllRecipes = () => {
               <p><strong>Likes:</strong> ❤️ {recipe.likeCount}</p>
               <Link
                 to={`/viewDetails/${recipe._id}`}
-                className="btn btn-sm btn-primary w-full mt-3"
+                className="btn btn-sm bg-sky-600 text-emerald-100 w-full mt-3"
               >
                 See Details
               </Link>

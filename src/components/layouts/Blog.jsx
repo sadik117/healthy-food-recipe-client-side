@@ -35,7 +35,7 @@ const blogPosts = [
 
 const Blog = () => {
   return (
-    <div className="px-4 py-14 mx-auto max-w-6xl md:px-8 lg:py-18">
+    <div className="px-4 py-8 mx-auto max-w-6xl md:px-8">
       <h2 className="text-3xl font-bold text-center mb-10">
         From Our Blog
       </h2>

@@ -107,7 +107,7 @@ const MyRecipes = () => {
                     setEditingRecipe(recipe);
                     setShowModal(true);
                   }}
-                  className="btn btn-sm bg-blue-600 hover:bg-blue-700 text-white border-none"
+                  className="btn btn-sm bg-teal-400 hover:bg-teal-500 text-white border-none"
                 >
                   Update
                 </button>

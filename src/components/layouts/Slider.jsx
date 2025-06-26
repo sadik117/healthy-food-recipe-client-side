@@ -27,7 +27,7 @@ const Slider = () => {
   ];
 
   return (
-    <div className="w-11/12 mt-6 max-w-6xl mx-auto h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-md mb-6">
+    <div className="w-11/12 mt-5 max-w-6xl mx-auto h-[200px] md:h-[250px] lg:h-[300px]  rounded-xl overflow-hidden shadow-md mb-6">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 3500, disableOnInteraction: false }}
