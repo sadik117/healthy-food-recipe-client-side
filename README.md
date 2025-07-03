@@ -68,7 +68,7 @@ jsonwebtoken	Secure JWT tokens for server-side auth
 bash
 Copy
 Edit
-git clone https://github.com/your-username/healthy-food-recipe-book.git
+git clone (https://github.com/sadik117/healthy-food-recipe-client-side)
 cd healthy-food-recipe-book
 2. Install Frontend Dependencies
 bash
